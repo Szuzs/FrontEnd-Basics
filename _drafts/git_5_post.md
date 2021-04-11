@@ -1,0 +1,49 @@
+## 5. gyakorlat: Első Git repo és első commit
+
+Ez most egy hosszú gyakorlat lesz, mivel elindítjuk az első saját Git repónkat! Nem kell félni tőle, nem harap. :smile:
+
+![Új Git repo indítása (sajátgépen)](../images/new_repo.png)
+Az első lépés, hogy elindítjuk a GH Desktop alkalmazást és belépünk (ha kiléptünk). A képen látható kedves kép fogad minket, vagyis valami ehhez hasonló. Oldalt láthatóak a repositoryk, amiket létrehoztunk... legalábbis, ha vannak ilyenek.
+
+![Repositoryk](../images/respositories.png)
+
+Mint látszik, nálam vannak és nem is egyféle. Nálatok valószínűleg nem lesznek, de ez nem is baj, hiszen azért vagyunk itt, hogy létrehozzuk az elsőt!
+
+Vissza a kezdőképernyőhöz: a pirossal bekaraikázott rész (új repo készítése a saját gépen) lesz a mi választásunk. Hiána emeli ki kékkel a tutorial repo készítést, ne válasszuk azt, mert hibát fog dobni, még akkor is, ha amúgy elkészíti. (Ez összetett, miért csinálja, ebbe ne menjünk bele. A Github feltételezi, hogy fizetős felhasználók vagyunk, holott nem.)
+
+![Új reporitory készítése ablak](../images/new_repo_modal.png)
+Ha rákattintottunk a gombra, feldob egy új ablakot, ami segítségével inicializálhatjuk az új repositoryt. Két kötelező mezője van: a név (ami alapján majd azonosíthatjuk a projektet az előbb látott oldalsó listában), illetve a *Local path*, vagyis a hely, ahol a projekt lakozik. A **Choose** gombra kattintva egyszerűen tallózzunk a gépen és keressünk egy szimpatikus, üres mappát, ahol elkezdhetjük a projektet. Nyugodtan hozzatok létre egyet külön a projektnek. Ne legyen túl "mélyen", az Asztal vagy a Dokumentumok is megteszi, ha nincs más. (Én mindig valami obskúros almappát válaszok, aztán keresem, hová tettem. Ti legyetek ennél okosabbak.) Ha ezt kitöltöttük, a többit hagyjuk üresen, lényegtelenek a mi szempontunkból. A kék **Create repository** gomb aktivvá válik, erre kattintva pedig a GH Desktop létrehozza a repót.
+
+![Új repó start oldala](../images/new_repo_start_page.png)
+A fentebb látható kép fogad minket, ha minden jól alakult. Jó, pár dolog változhat, pédául nálatok nem ugyanaz a repo neve, vagy ti nem Szuzs vagytok (bal alsó sarokban a saját felhasználód fog látszani), illetve a külső szerkesztőben megnyitás (középen a második kocka) sem biztos, hogy felajánlja. Nekem van külső szerkesztő programom, ezt érzékelte és ezért jelez.
+
+Semmi gond, ha nektek nincs! Nem véletlenül nem mondtam, hogy kellene. Sima szövegfájlokkal fogunk dolgozni, még Word sem kell. Egyszerű Jegyzettömb megteszi. Elvégre ez egy gyakorlás, minek bonyolítsuk túl?
+
+Az biztos, hogy egyelőre semmi helyi változtatást nem érzékel a program, mert nincs is. Ugyan egyből készségesen felajánlja, hogy lőjük fel a felhőba a repót, de mivel üres, ezért nem fogunk így tenni. Az majd jóval később jön el. Helytte inkább csináljunk valamit!
+
+A harmadik doboz a középső szektorból ad egy gombot, ami segítségével a repositorynkhoz tudunk ugrani. Vagy `Ctrl` + `Shift` + `F` is egyből megnyitja a mappát.
+
+![Git repository mappa a fájl böngészőben](../images/first_files.png)
+
+Ez egy látszólag üres mappát nyit meg, de ha bekapcsoljuk a rejtett fájlok megmutatását, akkor látszik, hogy nem ez a helyzet. Van egy rejtett *.git* nevű mappája és egy rejtett *.gitattributes* fájl benne, amit a GH Desktop helyzett el nekünk automatikusan. Ne foglalkozzunk velük, de ne is töröljük, ezt használja a Git a verziókvetéshez.
+
+Ebbe a mappába hozzunk létre egy egyszerű szövegfájlt (**.txt** kiterjesztéssel). Akár jobb egérgomb, Új és szövegfájl, akár a Jegyzettömb megnyitásával, és a fájl a megfelelő mappába mentésével. A szöveg mindegy, de tényleg. Én általában valami egyszerű angol mondatot írok be (a biztonság kedvéért első tesztek során nem használok ékezeteket, de a Git minden további nélkül kezeli az ékezetes betűket), pl. *"This is the first file of the repository."* Ti írjatok azt, ami jól esik &ndash; mondom, nincs rossz megoldás itt, ez tényleg saját és egyedi. Ne legyen túl hosszú, ez csak gyakorlás, de ez is csak egy javaslat.
+
+![Github Desktop az első módosítás után](../images/first_file_in_ghdesktop.png)
+Vissza a GH Desktopba! Valami hasonló fogad titeket is, mint a fenti képen látható (leszámítva, hogy valószínűleg más szöveget írtatok be). A program érzékelte a változást, jelzi is a Changes fül alatt, hogy egy változást talált, és középen mutatja, mit. A zöld háttér jelzi a hozzáadott szöveget &ndash; érthető, a semmihez képest minden hozzáadott. A zöld plusz ikon mutatja a hozzáadott fájlt.
+
+Ez már gyakorlatilag a *staging area*, ahogy az előző bejegyzésben is utaltam rá <!-- visszautalni a 4-re -->, mert a GH Desktop megspórolja nekünk ezt a lépést, hogy külön hozzá kéne adnunk. Jó, technikailag nem: azzal, hogy oldalt a fájl nevénél kivesszük a pipát, kivesszük a *stagingből* is, szóval azért a virtuális terület még lézetik, csak nem kell plusz képernyőket nézegetni hozzá. De azért hagyjuk bent a pipát! Mert most jön a *commit*, véglegesítjük a változtatásunkat!
+
+A bal alsó sarokban látható a *commit* szekció. A GH Desktop előre készít nekünk egy szöveget, hogy mit javasol *commit* azonosításra. Írjunk be valamit helyette, ez kissé unalmas! Jó, bevallom, én a rendkívül eredeti **Frist commit** szöveget választottam, de nincs semmi megkötés, szóval válasszátok azt, ami tetszik. A javaslat, hogy rövid, általában angol (hogy mások is megértsék), de legalábbis ékezet nélküli félmondat legyen. Általában jelen időben írják, de van, aki a sima múltra esküszik, mondván én ezt és ezt csináltam az előbb. A Github is az egyszerű jelen idejű commit szöveget javasolja, ami leírja, mit csinál a commit &ndash; például *"Új fájl hozzáadása"* (*"Add new file"*).
+
+Alatta egy leírás (**description**) mezőben esetleg pontosíthatjuk, mi történt az adott commitban, de egy ilyen egyszerű esetben erre nincs szükség. Ha egy óriás projektben valami kis módosítás hosszabb kifejetést érdemel, akkor fontos lehet.
+
+Utána a szép kék **Create commit to main**, és készen vagyunk. A **main** részt még nem fejtem itt ki, jóval később lesz róla szó. <!-- linkelni 10-hez -->
+
+![Első commit után a repo története](../images/history_after_first_commit.png)
+
+Így néz ki az első (oké, nálam második) commit után a repo története. A Changes fül mellett találjuk a *History* fület, ott tudjuk megnézni.
+
+Sikerült? Látszik a történetben az előbb létrehozott commit? Pezsgőbontás! Ez egy hatalmas lépés volt! Igen, innentől kezdve minden csak egyszerűbb lesz. Mármint nem mintha ne tanulnánk újabb dolgokat, de az első lépés a legnehezebb, utána már könnyen megy.
+
+Süti/tea/kávé-szünet, és a következő gyakorlattal folytatjuk. <!-- link a 6-a --> Legyetek addig nagyon büszkék magatokra, már előrébb jártok, mint egyes képzett programozók! :smile:
