@@ -1,15 +1,15 @@
 ## 4. Git alapjai: repo inicializálás, fájl hozzáadása, commit
 
-Némi elmélet következik megint. Az alapvető git funckiókról lesz most szó. Ezek: repository inicalizálás (indítás), fájlok hozzáadása, módosítása és törlése, illetve ezen változtatások véglegesítése (commit).
+Némi elmélet következik megint. Az alapvető git funkciókról lesz most szó. Ezek: repository inicializálás (indítás), fájlok hozzáadása, módosítása és törlése, illetve ezen változtatások véglegesítése (commit).
 
-![Tűz esetén: commit, push és fuss](../images/In_case_of_fire_git_push_first.jpg)
+![Tűz esetén: commit, push és fuss](..\assets\img\In_case_of_fire_git_push_first.jpg)
 A verziókezelés a gitben egy folyamatot követ, ami elsőre elég hajmeresztően hangzik, de könnyű belejönni. Utána meg már izommemória.
 
-A nulladik pont, mielőtt bármiféle fájlt elkezdenénk írni, hogy inicializáljuk (*init*), azaz elkezdjük a respositoryt. Enélkül nincs miről beszélni, hiszen nem tudunk verziókezelni. Ez csak a repón belül működik. Minden fájl, ami kívül esik ezen nem a projekt része, a git nem tud róla. Minden fájl viszont, ami az inicializált repo memmpájába tartozik (vagy almappájába), az bekerül. Ezért érdemes a legfelső mappában inicializálni a projektet, és utána az almappák automatikusan hozzáadódnak, mint egy belső mappában, és utána oda egyenként bepakolgatni mindent.
+A nulladik pont, mielőtt bármiféle fájlt elkezdenénk írni, hogy inicializáljuk (*init*), azaz elkezdjük a respositoryt. Enélkül nincs miről beszélni, hiszen nem tudunk verziókezelni. Ez csak a repón belül működik. Minden fájl, ami kívül esik ezen nem a projekt része, a git nem tud róla. Minden fájl viszont, ami az inicializált repo mappájába tartozik (vagy almappájába), az bekerül. Ezért érdemes a legfelső mappában inicializálni a projektet, és utána az almappák automatikusan hozzáadódnak, mint egy belső mappában, és utána oda egyenként bepakolgatni mindent.
 
 Ha van egy inicializált repo, akkor kezdődhet a munka a fájlokkal.
 
-Az első szakasz a munkafájlok, illetve nevezik homokozónak is (pl. a Wikipedia). Angolul ez a *working directory*, és minden itt lévő fájl. Ez az a mappa, ahol épp dolgozunk a saját gépünkön és inicializáltuk a repót. Teljesen privát, soha senki nem fogja látni, és ha tűz üt ki, akkor megsemmisül a géppel együtt. Itt szabad hibázni, újrakezdeni, törölni, meggondolni magunkat, kikukázni a Lomtárból, megint törölni, újraírni... akármit. Még az sem biztos, hogy az itt lévő fájlokat valaha is verziókezelésbe fogjuk vonni, mert mondjuk idő előtt töröljük vagy áthelyezzük a repón kívülre.
+Az első szakasz a munkafájlok, illetve nevezik homokozónak is (pl. a Wikipédia). Angolul ez a *working directory*, és minden itt lévő fájl. Ez az a mappa, ahol épp dolgozunk a saját gépünkön és inicializáltuk a repót. Teljesen privát, soha senki nem fogja látni, és ha tűz üt ki, akkor megsemmisül a géppel együtt. Itt szabad hibázni, újrakezdeni, törölni, meggondolni magunkat, kikukázni a Lomtárból, megint törölni, újraírni... akármit. Még az sem biztos, hogy az itt lévő fájlokat valaha is verziókezelésbe fogjuk vonni, mert mondjuk idő előtt töröljük vagy áthelyezzük a repón kívülre.
 
 A második szakasz a *staging area*, vagyis átmeneti terület, de ezt sem fordítja senki magyarra. Ez nem egy valós hely, inkább egy virtuális terület. Ide kerül minden, amit érdemesnek tartunk verziókezelésbe vonni. Innen még simán vissza lehet szipkázni a fájlokat, sőt, módosíthatjuk is.
 
@@ -19,7 +19,7 @@ A harmadik és végső szakasz a *commit*. Minden a *staging area*-ból ide ker�
 
 Nem egy atomfizika, az biztos, de a sorrend számít. Lásd alább a képen:
 
-![Szakaszok a gitben](../images/git_workflow.jpg)
+![Szakaszok a gitben](..\assets\img\git_workflow.jpg)
 
 De, mint mondtam, elsőre nehéz csak. Utána az ember megszokja és később már el sem tudja képzelni nélküle az életét. Én már akkor is így akarom menteni a fájlokat, ha nem verziókövetett környezetben dolgozom.
 
