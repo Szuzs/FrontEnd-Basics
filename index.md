@@ -1,5 +1,5 @@
 <ul>
-  {% for post in site.posts %}
+  {% for post in site.posts reversed %}
     <li>
       <a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
     </li>
