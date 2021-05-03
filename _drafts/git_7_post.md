@@ -1,0 +1,41 @@
+## 7. gyakorlat: Git history, avagy vissza a jövőbe
+
+Eddig a Gitet úgy használtuk, mint egy kibővített mentést segítő eszközt. Ez is egy lehetőség, de az igazán komoly cuccok csak most jönnek! Ebben az elméleti cikkben végignézzük, hogyan tudunk visszaállni egy korábbi állapotba.
+
+![Git history](..\images\history.png)
+
+A világunk tökéletlen, ismerjük be. Az emberek hibáznak néha, ez így van írás során is. Egy mentés, amit nem kellett volna, és máris megy a kukába az addigi munka.
+Na, itt jön be a verziókezelés a képbe. Ha már ennyit dolgoztunk azon, hogy azonosíthatóak legyenek a mentéseink, akkor használjuk is ezt ki: nézzük a _history_-t! A Git lehetővé teszi, hogy bármikor visszatérjünk egy korábban mentett állapotra, akár azért, mert az utolsó mentést elszúrtuk, akár azért, mert jó ötletnek tűnt a változtatás, de nem kellett volna. Sőt, akár ennél régebbre is visszamenehtünk.
+
+Eddig a Changes fülön dolgoztunk elsősorban, most nézzük meg, mi van mellette: a _History_ fülön találhatóak a korábbi mentéseink, ahogy a felső képen is látszik. Egy-egy bejegyzés egy _commit_. Bérmelyiket kijelölve látjuk a bal oldali paneleken, mi történt pontosan.
+
+Lépjünk vissza nyugodtan oda, amelyik tetszik! Én csak egyet fogok visszalépni, de lehet többet is. Nincs megkötés.
+
+Ha a kiválasztott commit megfelelő, akkor visszaállíthatjuk, és akkor ez lesz a legutolsó állapot. Azonban a Git megőrzi azt is, hogy visszaállítottunk, szóval a változtatásaink sem vesznek el örökké.
+
+A visszaállítás egyszerű: jobb klikk a commitra a jobb panelen, és az első opció, a _Revert changes in commit_.
+
+![Commit visszaállítás (revert)](..\images\revert_changes.png)
+
+Ezzel nem értünk a végére, mert ez csak hozzáadja a *staging*-hez a visszaállítást. Ugyanúgy érvénybe kell léptetnünk, mint minden változtatást: commit!
+
+![Commitról üzenet visszaállítás után](..\images\revert_changes1.png)
+
+Máskor nem _commit_ után, hanem még szerkesztés közben vesszük észre, hogy valami nem stimmel. Mondjuk kitöröltük a karakter nevét, pedig nem kellett volna... és hol is jelenik meg először? Á, mindegy. Visszavonás? Igen! A Git ilyet is tud.
+
+![Változtatás visszavonása](..\images\discard.jpg)
+
+Angolul a _"Discard changes"_ opció. Ezt a _Changes_ fülön lévő fájlokra jobb gombbal kattitva érjük el. Mint mondtam, ez a még szerkesztés alatt lévő, nem érvényesített változtatásokra vonatkozik. Visszavon mindent, ami az utolsó _commit_ óta történt.
+
+Rendben, az ember dolgozik, de mi történik, ha jó a változás, de majd csak később szeretné érvényesíteni? Mondjuk a harmadik fejezet összes változtatását (lehetnek több fájlban, mert egy maga a harmadik fejezet, egy a karakterlapok, egy a világ leírása, egy a politikai játszmák, egy a helyszínek és egy külön tartalomjegyzék csak annak, hogy melyik fájl mit tartalmaz). De hiába írjuk lineárisan a regényt, ha a szerkesztés közben a második fejezetbe is bele kell nyúlni, mert egy karakter nevét elírtuk, és ez csak most tánt fel. Vagy egy helyszínt egy picit át kell rendezni... Oké, a Git ezt is tudja. Eltehetjük a változtatásokat későbbre egy befőttben, hogy máskor érvényesítsük (mert így a history kicsit letisztultabb?).
+
+![Változtatások bedobozolása](..\images\stashing.jpg)
+
+A _"Stash changes"_ opció szintén jobb klikkre nyílik meg, és a visszavonáshoz hasonlóan a még nem érvényesített változtatásokra alkalmazható. Elpakoljuk a kiválasztott változásokat későbbre.
+
+
+Ez a rengeteg változtatás ide-oda egy nagyon fontos dolgot hoz magával: ne akarjunk mindent egyszerre megváltoztatni és érvényesíteni! A pici, apró változtatásokat könnyebb követni, sőt, könnyebb visszavonni is. Ez persze nem azt jelenti, hogy minden létező szót külön commitba kéne rakni, egyszerűen vegyük a legkisebb egységét a változtatásainknak, és az legyen egy érvényesített változás-szett. Ez az _atomic commit_ lényege.
+
+Ilyen kisebb commit lehet mondjuk egy fejezeten belül a helyesírás-ellenőrzés. Vagy egy bekezdés megírása. Vagy egy karakter nevének javítása minden fejezetben. Valami kisebb, egységként kezelhető dolog. Van, aki számára egy fejezet megírása is ilyen, másoknak ez talán tál nagy falat. Nincs kötelező javaslat, annyi kerüljön egy commitba, amennyit könnyeb átlát az ember és tudja kezelni.
+
+Ez volt a mai gyakorlat... egy picit hosszabbra sikerült. A követlező cikk megint elméleti lesz, az elágazásokról fogunk tanulni.
